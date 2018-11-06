@@ -1,0 +1,43 @@
+{
+  "name": "vt-message",
+  "version": "1.0.0",
+  "description": "message",
+  "main": "dist/index.vue",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-vue-jsx": "^3.3.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-runtime": "^6.23.0",
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "cross-env": "^3.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-tools/vt-message.git"
+  },
+  "scripts": {
+    "prepublish": "npm run compile",
+    "codecov": "./node_modules/.bin/codecov",
+    "copy": "rm -fr dist && cp -rf src dist",
+    "compile": "npm run copy && node_modules/.bin/babel dist -d dist"
+  },
+  "keywords": [
+    "vue",
+    "alert",
+    "confirm",
+    "dialog",
+    "message",
+    "vue-message",
+    "vue-dialog",
+    "vt-message"
+  ],
+  "homepage": "https://github.com/vue-tools/vt-message#readme",
+  "author": "965283058@qq.com",
+  "license": "MIT"
+}
