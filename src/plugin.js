@@ -84,24 +84,26 @@ function plugin(Vue, Msg) {
         }
     })
 
-    container = document.createElement('div')
-    document.getElementsByTagName('body')[0].appendChild(container)
-    component = new Component().$mount(container)
 
     function method() {
         let opts = null
         if (arguments.length == 1) {
             if (typeof arguments[0] == 'object') {
-                opts = Object.assign(props, arguments[0], {show: true})
+                opts = Object.assign({},props, arguments[0], {show: true})
             } else if (typeof arguments[0] == 'string') {
-                opts = Object.assign(props, {text: arguments[0]}, {show: true})
+                opts = Object.assign({},props, {text: arguments[0]}, {show: true})
             } else {
                 throw new Error("[plugin message] params error")
             }
         } else if (arguments.length == 2 && typeof arguments[0] == 'string' && typeof arguments[1] == 'string') {
-            opts = Object.assign(props, {title: arguments[0], text: arguments[1]}, {show: true})
+            opts = Object.assign({},props, {title: arguments[0], text: arguments[1]}, {show: true})
         } else {
             throw new Error("[plugin message] params error")
+        }
+        if(!component){
+            container = document.createElement('div')
+            document.getElementsByTagName('body')[0].appendChild(container)
+            component = new Component().$mount(container)
         }
         component.options = opts
         if (typeof opts.done != 'function') {
