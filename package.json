@@ -6,16 +6,6 @@
   "devDependencies": {
     "vue": "^2.1.6"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0"
-    ],
-    "plugins": [
-      "transform-vue-jsx",
-      "transform-runtime"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vue-tools/vt-message.git"
